@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>mouseover and mouseout events</title>
+</head>
+<body>
+
+    <!--Write your HTML content here-->
+    <p id="mouse-me">Move your mouse here!</p>
+
+<script>
+  
+    // Write your script here 
+    let mouseCount = 0
+
+    let message = document.querySelector ('#mouse-me')
+    
+    message.addEventListener('mouseover', function(){
+        //increase mousecount by 1 
+        // if and else are conditions
+    mouseCount = mouseCount + 1 
+    if(mouseCount == 1){
+        message.innerHTML='Mouse has been here ' + mouseCount + ' time'
+    }else {
+        message.innerHTML = 'Mouse has been here ' + mouseCount + ' times'//modify message to include mousecount
+    
+    }   
+    })
+
+    message.addEventListener('mouseout',function(){
+        message.innerHTML = 'Your mouse is Not in this message'
+    })
+
+    
+</script>
+
+</body>
+</html>

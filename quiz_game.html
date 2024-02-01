@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title></title>
+</head>
+<body>
+
+    <!-- Write your HTML content here -->
+
+    <p> What is the capital of Ecuador?</p>
+
+    <button class="wrong-answer">Cuenca</button>
+    <button id="correct-answer">Quito</button>
+    <button class="wrong-answer">Guayaquil</button>
+
+    <p id="result"></p>
+<script>
+
+    // Write your script here
+
+    let correctAnswerButton = document.querySelector('#correct-answer')
+    
+    let defaultButtonColor = correctAnswerButton.style.background 
+
+    let result = document.querySelector('#result')
+
+    let wrongAnswerButtons = document.querySelectorAll('.wrong-answer')
+    
+    // add an event listener to both buttons.
+
+    wrongAnswerButtons.forEach(function(wrongAnswerButton){  //loop for each wrong answers buttons
+        wrongAnswerButton.addEventListener('click', function(){
+            result.innerHTML = 'Wrong answer, try again!'
+            correctAnswerButton.style.background = defaultButtonColor
+        })
+    })
+ 
+    // add an event listener for correct answer button
+    correctAnswerButton.addEventListener('click', function(){
+        result.innerHTML = 'Correct answer!'
+        correctAnswerButton.style.background = 'cyan'
+
+    })
+
+</script>
+
+</body>
+</html>
